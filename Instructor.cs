@@ -13,9 +13,8 @@ namespace C_StudentExercises
         public void AssignStudents(Cohort cohort, Exercise exercise) {
             foreach(Student student in cohort.StudentList) {
             student.ExerciseList.Add(exercise);
-            Console.WriteLine($"{FirstName} assigned {exercise.ExerciseName} to {student.FirstName}");
+            // Console.WriteLine($"{FirstName} assigned {exercise.ExerciseName} to {student.FirstName} who is in {cohort.CohortName}");
             }
-
         }
 
         public Instructor(string firstName, string lastName, string slackHandle, Cohort cohortName) {

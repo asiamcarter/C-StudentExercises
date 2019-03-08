@@ -11,7 +11,7 @@ namespace C_StudentExercises
        public List<Instructor> InstructorList{get;set;}
 
        public Cohort() {
-          StudentList = new List<Student>();
+        StudentList = new List<Student>();
         InstructorList = new List<Instructor>();
        }
 

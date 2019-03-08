@@ -9,7 +9,6 @@ namespace C_StudentExercises
         {
             // Create 4, or more, exercises.
             Exercise exercise1 = new Exercise("Exercise 1", "JavaScript");
-            Console.WriteLine(exercise1.ExerciseName);
             Exercise exercise2 = new Exercise("Exercise 2", "C#");
             Exercise exercise3 = new Exercise("Exercise 3", "ReactJS");
             Exercise exercise4 = new Exercise("Exercise 4", "Python");
@@ -28,7 +27,6 @@ namespace C_StudentExercises
             );
             Nick.CohortName= "29";
             Cohort1.StudentList.Add(Nick);
-            Console.WriteLine(Nick.FirstName);
             // Cohort1.StudentList.Add(Nick);
 
             Student Hunter = new Student("Hunter", "Metts", "endlesssummerhd");
@@ -47,6 +45,7 @@ namespace C_StudentExercises
             Cohort2.InstructorList.Add(Andy);
 
             Instructor Leah = new Instructor("Leah", "Gwin", "leahgwin22", Cohort3);
+             Cohort3.InstructorList.Add(Leah);
 
             // Have each instructor assign 2 exercises to each of the students.
 
@@ -56,6 +55,29 @@ namespace C_StudentExercises
             Andy.AssignStudents(Cohort2, exercise3);
             Leah.AssignStudents(Cohort3, exercise2);
             Leah.AssignStudents(Cohort3, exercise4);
+
+            // Create a list of students. Add all of the student instances to it.
+            List<Cohort> CohortList = new List<Cohort>() {
+                Jisie.CohortName, Andy.CohortName, Leah.CohortName
+            };
+            List<Student> StudentList = new List<Student>();
+            List<Exercise> ExerciseList = new List<Exercise>();
+
+            foreach(Cohort cohortname in CohortList) {
+                foreach(Student student in cohortname.StudentList) {
+                    StudentList.Add(student);
+                    // Console.WriteLine(student.FirstName);
+                foreach(Exercise exercise in student.ExerciseList) {
+                    // Console.WriteLine(exercise.ExerciseName);
+                    ExerciseList.Add(exercise);
+
+                Console.WriteLine($"{student.FirstName} {student.LastName} is working on {exercise.ExerciseName}");
+                }
+                }
+
+            }
+
+
 
         }
     }
